@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AppService {
 
-    public nameSubject = new Subject<any>();
+  public nameSubject = new Subject<any>();
 
-    constructor() { }
+  constructor() { }
 
-    public setNameSubject(value) {
-        this.nameSubject.next(value);
-    }
-
+  public setNameSubject(value) {
+      this.nameSubject.next(value);
+  }
 }
