@@ -1,0 +1,13 @@
+
+ <fieldset>
+    <legend>Parent component:</legend>
+    Name: <input type="text"   #nameref="ngModel" name="name" [(ngModel)]="name" />
+    <button (click)="onClick()">Click</button>
+    <button (click)="onResetClick()">Reset</button>
+    <br> <br>
+    <fieldset>
+        <legend>Child component:</legend>
+        Hi <app-child [nameFromParent]="nameSendToChild"  (editEvent)="onNameAssignForEdit($event)"></app-child>
+    </fieldset>
+
+  </fieldset>
